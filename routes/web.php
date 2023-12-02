@@ -17,7 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/register', [inscription::class,"register"])->name('register');
+
+Route::get('/inscription',function(){
+    return view('inscription');
+});
+
+Route::post('/inscription', [inscription::class,"register"])->name('registers');
 
 Route::put('/modification', [inscription::class,"modification"])->name('modification');
 
@@ -34,8 +39,7 @@ Route::delete('/supprimer/{id}', [inscription::class,'supprimer'])->name('suppri
 
 Route::get('/utilisateur/{id}', [inscription::class, 'getUtilisateur'])->name('utilisateur');
 
-Route::post('/cars', [controllerdesvehicule::class,"create"])->name('register');
-
+Route::post('/cars', [controllerdesvehicule::class,"create"])->name('registert');
 
 Route::get('/listecars',[controllerdesvehicule::class,"index"]);
 
@@ -43,6 +47,10 @@ Route::delete('/supprimer/{id}', [controllerdesvehicule::class,'supprimer'])->na
 /**
  * 
  */
+Route::get('/gestionutilisateur', function () {
+    return view('/gestionutilisateur');
+});
+
 Route::get('/listecars', function () {
     return view('listecars');
 });
@@ -52,16 +60,6 @@ Route::get('/listecars', function () {
 });
 
  Route::get('/', function () {
-    return view('connexion');
-});
-
-Route::get('/inscription',function(){
-    return view('inscription');
-});
-
-
- 
-Route::get('/connexion',function(){
     return view('connexion');
 });
 

@@ -20,6 +20,7 @@ class controllerdesvehicule extends Controller
 
     public function create(Request $request)
     {
+        
         $request->validate([
             'matricule' => 'required',
             'couleur' => 'required',
@@ -32,9 +33,9 @@ class controllerdesvehicule extends Controller
             'photo4' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
 
         ]);
-
+     
         $car = Car::create([
-            'name' => $request->name,
+            'matricule' => $request->matricule,
             'couleur' => $request->couleur,
             'marque' => $request->marque,
             'kilometrage' => $request->kilometrage,

@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -43,8 +45,9 @@
         <label for="password">Votre mot de passe</label>
         <input type="password" id="password" name="password" required>
     </div>
-   
+   <div>
     <button type="submit">Modifier</button>
+   </div>
 </form>
 <!-- ... -->
 
